@@ -1,0 +1,6 @@
+{
+    "serviceUrl": "https://web-rct-call.herokuapp.com",
+    "runOptions": "#session:1 #vnc #getstats",,,,
+
+
+}

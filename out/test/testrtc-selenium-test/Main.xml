@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="GUI Test">
+
+    <test name="WebRTC Test - Private" >
+        <classes>
+            <class name="AnalyseTest"/>
+            <class name="LoginTest"/>
+            <class name="DashBoardTest"/>
+            <class name="SidebarTest"/>
+            <class name="TestDefinitionTest"/>
+            <class name="TestRunTest"/>
+            <class name="WebRTCDumpTest"/>
+        </classes>
+    </test>
+
+
+</suite>

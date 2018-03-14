@@ -1,0 +1,45 @@
+{
+    "_id": "5a9313d4140d7d0011ea8fa4",
+    "def_sort": "SELENIUM_TEST",
+    "serviceUrlOpen": false,
+    "stared": false,
+    "lastRankDelta": null,
+    "lastRank": null,
+    "runCount": 4,
+    "lastRunDate": "2018-02-25T20:24:16.049Z",
+    "__v": 0,
+    "project": "5a82d58a77a5940011f64e69",
+    "testProfiles": [
+        {
+            "browser": "linux-chrome-stable",
+            "location": "any",
+            "network": "No throttling",
+            "firewall": "FW_NO_FW",
+            "media": "Salsa-720p.mp4"
+        }
+    ],
+    "serviceUrl": "https://web-rct-call.herokuapp.com",
+    "runOptions": "#session:1 #vnc #getstats",
+    "info": "This test covers following issues\nAgent 1 : Connects to helpdesk and it is ready to recieve calls. After that call is executed.",
+    "name": "SELENIUM_TEST",
+    "browserType": "Chrome",
+    "testScript": "\r\nvar sec = 1000;\r\n\r\n\r\nclient\r\n    .rtcSetTestExpectation(\"audio.in == 1\")\r\n    .rtcSetTestExpectation(\"audio.out == 1\")\r\n    .rtcSetTestExpectation(\"audio.in.bitrate > 0\")\r\n    .rtcSetTestExpectation(\"audio.out.bitrate > 0\")\r\n\r\n\r\nfunction operatorLogin(username){\r\n    client\r\n        .url(process.env.RTC_SERVICE_URL+'/callcenter/index.html')\r\n        .rtcScreenshot(\"Operator screen\")\r\n    \t.waitForElementVisible('body', 10*sec)\r\n\t    .setValue('input[name=friendlyName]',username)\r\n\t    .click('button[type=submit]')\r\n\t    .rtcScreenshot(\"Operator logged in\")\r\n}\r\n\r\nfunction operatorExecuteCall(number){\r\n    client\r\n      .waitForElementVisible('input[name=phoneNumber]',3*sec)\r\n      .setValue('input[name=phoneNumber]',number)\r\n      .pause(1*sec)\r\n      .click('section > button')\r\n      .pause(30*sec)\r\n      .click('section > button')\r\n      }\r\n\r\n\r\n//Code logic\r\noperatorLogin('JohnDoe')\r\noperatorExecuteCall('(661) 490-9684')\r\n\r\n\r\n\r\n\r\n\r\n",
+    "parameters": {
+        "iterationMode": "loop",
+        "loopCount": 1,
+        "duration": 10,
+        "concurrentUsers": 1
+    },
+    "isRemote": false,
+    "createDate": "2018-02-25T19:51:48.209Z",
+    "restangularEtag": "W/\"777-aeOStEqnN7hVxu/dr0K6sA\"",
+    "route": "5a9313d4140d7d0011ea8fa4",
+    "reqParams": null,
+    "restangularized": true,
+    "fromServer": true,
+    "parentResource": {
+        "route": "test_definitions",
+        "parentResource": null
+    },
+    "restangularCollection": false
+}
