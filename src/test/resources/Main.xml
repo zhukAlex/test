@@ -8,7 +8,7 @@
 
     <test name="WebRTC Test - Private" >
         <classes>
-            <!--class name="AnalyseTest"/-->
+            <class name="AnalyseTest"/>
             <class name="LoginTest"/>
             <class name="DashBoardTest"/>
             <class name="SidebarTest"/>
