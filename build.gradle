@@ -7,8 +7,6 @@ buildscript {
     dependencies {
         classpath "io.qameta.allure:allure-gradle:2.5"
         classpath "io.franzbecker:gradle-lombok:1.11"
-
-
     }
 }
 
