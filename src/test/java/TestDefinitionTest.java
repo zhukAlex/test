@@ -37,31 +37,37 @@ public class TestDefinitionTest {
     }
 
     @Test
+    @Description("Click on \"create\" test button")
     public void createTest(){
         testDefinition.createTest();
     }
 
     @Test
+    @Description("Click on sort by \"Name\"")
     public void testSortByName() {
         testDefinition.sortByName();
     }
 
     @Test
+    @Description("Click on sort by \"Run Count\"")
     public void testSortByRunCount() {
         testDefinition.sortByRunCount();
     }
 
     @Test
+    @Description("Click on sort by \"Last Run\"")
     public void testSortByLastRun() {
         testDefinition.sortByLastRun();
     }
 
     @Test
+    @Description("Search test by name or description")
     public void testSearchByNameOrDescription() {
         testDefinition.searchByNameOrDescription("Talky");
     }
 
     @Test
+    @Description("Click on next and prev page button")
     public void testChangePage() {
         testDefinition.selectPage();
     }

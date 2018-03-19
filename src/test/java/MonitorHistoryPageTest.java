@@ -16,43 +16,43 @@ public class MonitorHistoryPageTest {
     }
 
     @Test
-    @Description("Sort history by result")
+    @Description("Click on sort by \"Result\"")
     public void testSortByResult() {
         monitorHistoryPage.sortByResult();
     }
 
     @Test
-    @Description("Sort history by monitor")
+    @Description("Click on sort by \"Monitor\"")
     public void testSortByMonitor() {
         monitorHistoryPage.sortByMonitor();
     }
 
     @Test
-    @Description("Sort history by date")
+    @Description("Click on sort by \"Date\"")
     public void testSortByDate() {
         monitorHistoryPage.sortByDate();
     }
 
     @Test
-    @Description("Sort history by flag")
+    @Description("Click on sort by \"Flag\"")
     public void testSortByFlag() {
         monitorHistoryPage.sortByFlag();
     }
 
     @Test
-    @Description("Sort history by name")
+    @Description("Click on sort by \"Name\"")
     public void testSortByName() {
         monitorHistoryPage.sortByName();
     }
 
     @Test
-    @Description("Sort history by run")
+    @Description("Click on sort by \"Run\"")
     public void testSortByRun() {
         monitorHistoryPage.sortByRun();
     }
 
     @Test
-    @Description("Search test by monitor")
+    @Description("Click on sort by \"Monitor\"")
     public void testSearchByMonitor() {
         monitorHistoryPage.searchByMonitor("test");
     }

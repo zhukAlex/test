@@ -18,31 +18,31 @@ public class SidebarTest extends TestDetailsPage {
     }
 
     @Test
-    @Description("Click at menu item \"Home\"")
+    @Description("Click menu item \"Home\"")
     public void testClickHome() {
         sidebarPage.clickMenuAtHome();
     }
 
     @Test
-    @Description("Click at menu item \"Tests\"")
+    @Description("Click menu item \"Tests\"")
     public void testClickAtTests() {
         sidebarPage.clickMenuAtTests();
     }
 
     @Test
-    @Description("Click at menu item \"Test Run History\"")
+    @Description("Click menu item \"Test Run History\"")
     public void testClickAtTestRunHistory() {
         sidebarPage.clickMenuAtTestRunHistory();
     }
 
     @Test
-    @Description("Click at menu item \"Monitor Run History\"")
+    @Description("Click menu item \"Monitor Run History\"")
     public void testClickAtMonitorRunHistory() {
         sidebarPage.clickMenuAtMonitorRunHistory();
     }
 
     @Test
-    @Description("Click at menu item \"Analyze Web RTC Dump\"")
+    @Description("Click menu item \"Analyze Web RTC Dump\"")
     public void testClickAtAnalyze() {
         sidebarPage.clickMenuAtAnalyze();
     }

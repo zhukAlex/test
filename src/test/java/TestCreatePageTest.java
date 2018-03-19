@@ -18,6 +18,7 @@ public class TestCreatePageTest {
     }
 
     @Test
+    @Description("Create and save new test")
     public void createTest() {
         testCreatePage.setName(name);
         testCreatePage.setDescription("desc");
@@ -30,6 +31,7 @@ public class TestCreatePageTest {
     }
 
     @Test
+    @Description("Delete created test")
     public void deleteTest() {
         testCreatePage.deleteTest(name);
     }
