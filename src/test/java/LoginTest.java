@@ -16,7 +16,7 @@ public class LoginTest {
     public void loginIntoApplication(){
         loginPage.openPage();
         loginPage.loginWithForm();
-        //loginPage.checkIfUserIsLogged();
+        loginPage.checkIfUserIsLogged();
         sleep(2000);
     }
 }

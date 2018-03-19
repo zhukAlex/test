@@ -53,7 +53,7 @@ public class LoginPage {
     public LoginPage(){
 
         Configuration.headless = true;
-        Configuration.browser="chrome";
+        Configuration.browser=System.getenv("browser");
         Configuration.baseUrl="https://app.testrtc.com";
         Configuration.timeout = 3000;
     }
