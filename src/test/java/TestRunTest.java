@@ -16,14 +16,14 @@ public class TestRunTest  {
         testRunPage.openPage();
 
     }
-
+/*
     @Test
     @Description("Open first finished test result and verifies if required content is present")
     public void getTestRunInformation(){
         testRunPage.openTestResults();
         testRunPage.checkOutComeRateTitle();
     }
-
+*/
     @Test
     @Description("Sort by results")
     public void sortByFirstSelectTest() {

@@ -29,15 +29,15 @@ public class TestDefinitionTest {
 
         testDefinition.importTest(validTestFile,true);
     }
-
+/*
     @Test
     @Description("Importing invalid test case into suite from JSON")
     public void importInvalidTest(){
         testDefinition.importTest(invalidTestFile,false);
     }
-
+*/
     @Test
-    @Description("Click on \"create\" test button")
+    @Description("Click on \"Create test\" button")
     public void createTest(){
         testDefinition.createTest();
     }
