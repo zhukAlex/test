@@ -1,6 +1,7 @@
 package page;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 import java.util.List;
@@ -28,6 +29,7 @@ public class TestCreatePage {
 
     }
 
+    @Step
     public void openPage(){
         //Open page based on relative url
         open("/app/new-testProperties/");
@@ -36,11 +38,13 @@ public class TestCreatePage {
         sleep(2000);
     }
 
+    @Step
     public void createTest() {
         saveTestButton.click();
         sleep(8000);
     }
 
+    @Step
     public void deleteTest(String name) {
         open("/app/testDefinition/");
         sleep(3000);
@@ -62,22 +66,27 @@ public class TestCreatePage {
         }
     }
 
+    @Step
     public void setName(String name) {
         testName.append(name);
     }
 
+    @Step
     public void setDescription(String description) {
         testDescription.append(description);
     }
 
+    @Step
     public void setConcurrentProbes(String concurrentProbes) {
         testConcurrent.append(concurrentProbes);
     }
 
+    @Step
     public void setIterations(String iterations) {
         testIterations.append(iterations);
     }
 
+    @Step
     public void addRunOptions(String runOptions) {
         if (testOptions.getValue().equals(""))
             testOptions.append(runOptions);
@@ -85,6 +94,7 @@ public class TestCreatePage {
             testOptions.append(", " + runOptions);
     }
 
+    @Step
     public void setServiceUrl(String serviceUrl) {
         testUrl.append(serviceUrl);
     }

@@ -2,6 +2,7 @@ package page;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 import java.util.List;
@@ -19,19 +20,21 @@ public class TestRunPage {
     private SelenideElement selectButton = $(By.xpath(".//select[@ng-change='onFilterChange()']"));
     private SelenideElement searchInput = $(By.xpath(".//input[@ng-model='search.term']"));
     private SelenideElement searchButton = $(By.xpath(".//button[@class='btn btn-sm btn-default']"));
-    private List<SelenideElement> testList = $$(By.xpath(".//table[@class='table grid-table']//th"));
+    private List<SelenideElement> sortList = $$(By.xpath(".//table[@class='table grid-table']//th"));
     private List<SelenideElement> selectList = $$(By.xpath(".//select[@ng-change='onFilterChange()']//option"));
 
     public TestRunPage(){
 
     }
 
+    @Step
     public void openPage(){
 
         open("/app/testRun/");
         sleep(3000);
     }
 
+    @Step
     public void openTestResults(){
         firstTestResult.should(Condition.exist);
         firstTestResult.click();
@@ -39,14 +42,17 @@ public class TestRunPage {
 
     }
 
+    @Step
     public void checkTestResultTitle(){
         testResultTitle.should(Condition.visible);
     }
 
+    @Step
     public void checkOutComeRateTitle(){
         outComeRateTitle.should(Condition.visible);
     }
 
+    @Step
     public void sortByFirstSelectTest() {
         for (int i = 0; i < 8; i++) {
             selectButton.click();
@@ -56,6 +62,7 @@ public class TestRunPage {
         }
     }
 
+    @Step
     public void sortBySecondSelectTest() {
         for (int i = 8; i < selectList.size() - 4; i++) {
             selectButton.click();
@@ -65,6 +72,7 @@ public class TestRunPage {
         }
     }
 
+    @Step
     public void sortByThirdSelectTest() {
         for (int i = selectList.size() - 4; i < selectList.size(); i++) {
             selectButton.click();
@@ -74,55 +82,68 @@ public class TestRunPage {
         }
     }
 
+    @Step
+    public void clickSortListAt(int i) {
+        sortList.get(i).click();
+    }
+
+    @Step
     public void sortByManual() {
-        testList.get(0).click();
+        clickSortListAt(0);
         sleep(2000);
-        testList.get(0).click();
+        clickSortListAt(0);
         sleep(2000);
     }
 
+    @Step
     public void sortByFlag() {
-        testList.get(1).click();
+        clickSortListAt(1);
         sleep(2000);
-        testList.get(1).click();
+        clickSortListAt(1);
         sleep(2000);
     }
 
+    @Step
     public void sortByName() {
-        testList.get(2).click();
+        clickSortListAt(2);
         sleep(2000);
-        testList.get(2).click();
+        clickSortListAt(2);
         sleep(2000);
     }
 
+    @Step
     public void sortByMachines() {
-        testList.get(3).click();
+        clickSortListAt(3);
         sleep(2000);
-        testList.get(3).click();
+        clickSortListAt(3);
         sleep(2000);
     }
 
+    @Step
     public void sortByIterations() {
-        testList.get(4).click();
+        clickSortListAt(4);
         sleep(2000);
-        testList.get(4).click();
+        clickSortListAt(4);
         sleep(2000);
     }
 
+    @Step
     public void sortByProbes() {
-        testList.get(5).click();
+        clickSortListAt(5);
         sleep(2000);
-        testList.get(5).click();
+        clickSortListAt(5);
         sleep(2000);
     }
 
+    @Step
     public void sortByTime() {
-        testList.get(6).click();
+        clickSortListAt(6);
         sleep(2000);
-        testList.get(6).click();
+        clickSortListAt(6);
         sleep(2000);
     }
 
+    @Step
     public void searchByName(String name) {
         searchInput.setValue(name);
         sleep(2000);

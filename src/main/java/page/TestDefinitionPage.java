@@ -42,6 +42,7 @@ public class TestDefinitionPage extends Page{
 
     }
 
+    @Step
     public void openPage(){
         //Open page based on relative url
         open("/app/testDefinition/");
@@ -74,27 +75,36 @@ public class TestDefinitionPage extends Page{
 
     }
 
+    @Step
+    public void clickSortListAt(int i) {
+        sortList.get(i).click();
+    }
+
+    @Step
     public void sortByName() {
-        sortList.get(0).click();
+        clickSortListAt(0);
         sleep(2000);
-        sortList.get(0).click();
+        clickSortListAt(0);
         sleep(2000);
     }
 
+    @Step
     public void sortByRunCount() {
-        sortList.get(2).click();
+        clickSortListAt(2);
         sleep(2000);
-        sortList.get(2).click();
+        clickSortListAt(2);
         sleep(2000);
     }
 
+    @Step
     public void sortByLastRun() {
-        sortList.get(3).click();
+        clickSortListAt(3);
         sleep(2000);
-        sortList.get(3).click();
+        clickSortListAt(3);
         sleep(2000);
     }
 
+    @Step
     public void searchByNameOrDescription(String string) {
         searchInput.setValue(string);
         sleep(2000);
@@ -102,10 +112,21 @@ public class TestDefinitionPage extends Page{
         sleep(2000);
     }
 
-    public void selectPage() {
+    @Step
+    public void clickNextPage() {
         nextPage.click();
-        sleep(2000);
+    }
+
+    @Step
+    public void clickPrevPage() {
         prevPage.click();
+    }
+
+    @Step
+    public void selectPage() {
+        clickNextPage();
+        sleep(2000);
+        clickPrevPage();
         sleep(2000);
     }
 }

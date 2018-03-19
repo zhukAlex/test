@@ -1,6 +1,7 @@
 package page;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 
@@ -31,7 +32,6 @@ public class SidebarPage extends Page {
         //  requiredElements.add(menuItemHelp);
         requiredElements.add(menuItemHome);
         requiredElements.add(menuItemTests);
-        //  requiredElements.add(menuItemMonitoring);
         requiredElements.add(menuItemAnalyzeWebRTCDump);
         requiredElements.add(menuItemMonitorRunHistory);
         requiredElements.add(menuItemTestRunHistory);
@@ -39,11 +39,13 @@ public class SidebarPage extends Page {
         checkElements();
     }
 
+    @Step
     public void openPage() {
         sleep(2000);
     }
 
-    public void clickMenuAtHome() {
+    @Step
+    public void clickMenuItemsAtHome() {
         for (int i = 0; i < requiredElements.size(); i++) {
             open("/app/main/");
             sleep(2000);
@@ -55,7 +57,8 @@ public class SidebarPage extends Page {
         }
     }
 
-    public void clickMenuAtTests() {
+    @Step
+    public void clickMenuItemsAtTests() {
         for (int i = 0; i < requiredElements.size(); i++) {
             open("/app/testDefinition/");
             sleep(2000);
@@ -67,7 +70,8 @@ public class SidebarPage extends Page {
         }
     }
 
-    public void clickMenuAtTestRunHistory() {
+    @Step
+    public void clickMenuItemsAtTestRunHistory() {
         for (int i = 0; i < requiredElements.size(); i++) {
             open("/app/testRun/");
             sleep(2000);
@@ -79,7 +83,8 @@ public class SidebarPage extends Page {
         }
     }
 
-    public void clickMenuAtMonitorRunHistory() {
+    @Step
+    public void clickMenuItemsAtMonitorRunHistory() {
         for (int i = 0; i < requiredElements.size(); i++) {
             open("/app/monitor-run/");
             sleep(2000);
@@ -91,7 +96,8 @@ public class SidebarPage extends Page {
         }
     }
 
-    public void clickMenuAtAnalyze() {
+    @Step
+    public void clickMenuItemsAtAnalyze() {
         for (int i = 0; i < requiredElements.size(); i++) {
             open("/app/analyzeDump/");
             sleep(2000);
@@ -103,6 +109,7 @@ public class SidebarPage extends Page {
         }
     }
 
+    @Step
     public void clickChat() {
         buttonStartChat.click();
         sleep(2000);

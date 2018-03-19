@@ -77,8 +77,6 @@ public class LoginPage {
         formSubmit.click();
         sleep(2000);
         //testrtctest@mailinator.com
-
-
     }
 
     @Step

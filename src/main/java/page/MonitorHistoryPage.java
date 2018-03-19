@@ -1,6 +1,7 @@
 package page;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 import java.util.List;
@@ -24,6 +25,7 @@ public class MonitorHistoryPage {
 
     }
 
+    @Step
     public void openPage() {
         //Open page based on relative url
         open("/app/monitor-run/");
@@ -32,6 +34,7 @@ public class MonitorHistoryPage {
         sleep(3000);
     }
 
+    @Step
     public void sortByResult() {
         for (int i = 0; i < 6; i++) {
             selectButton.click();
@@ -41,6 +44,7 @@ public class MonitorHistoryPage {
         }
     }
 
+    @Step
     public void sortByMonitor() {
         for (int i = 6; i < selectList.size() - 4; i++) {
             selectButton.click();
@@ -50,6 +54,7 @@ public class MonitorHistoryPage {
         }
     }
 
+    @Step
     public void sortByDate() {
         for (int i = selectList.size() - 4; i < selectList.size(); i++) {
             selectButton.click();
@@ -59,6 +64,7 @@ public class MonitorHistoryPage {
         }
     }
 
+    @Step
     public void sortByFlag() {
         testList.get(0).click();
         sleep(2000);
@@ -66,6 +72,7 @@ public class MonitorHistoryPage {
         sleep(2000);
     }
 
+    @Step
     public void sortByName() {
         testList.get(1).click();
         sleep(2000);
@@ -73,6 +80,7 @@ public class MonitorHistoryPage {
         sleep(2000);
     }
 
+    @Step
     public void sortByRun() {
         testList.get(3).click();
         sleep(2000);
@@ -80,6 +88,7 @@ public class MonitorHistoryPage {
         sleep(2000);
     }
 
+    @Step
     public void searchByMonitor(String monitor) {
         searchInput.setValue(monitor);
         sleep(2000);

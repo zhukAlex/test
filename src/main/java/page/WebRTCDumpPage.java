@@ -1,5 +1,7 @@
 package page;
 
+import io.qameta.allure.Step;
+
 import static com.codeborne.selenide.Selenide.open;
 
 /**
@@ -11,6 +13,7 @@ public class WebRTCDumpPage extends Page {
 
     }
 
+    @Step
     public void openPage(){
         open("/app/analyzeDump/");
     }
