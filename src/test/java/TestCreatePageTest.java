@@ -11,15 +11,11 @@ public class TestCreatePageTest {
     TestCreatePage testCreatePage = new TestCreatePage();
     String name = "NameTest" + System.currentTimeMillis();
 
-    @BeforeMethod
-    @Description("Opening base page")
-    public void testDefinition(){
-        testCreatePage.openPage();
-    }
 
     @Test
     @Description("Create and save new test")
     public void createTest() {
+        testCreatePage.openPage("/app/new-testProperties/");
         testCreatePage.setName(name);
         testCreatePage.setDescription("desc");
         testCreatePage.setConcurrentProbes("1");
@@ -33,6 +29,7 @@ public class TestCreatePageTest {
     @Test
     @Description("Delete created test")
     public void deleteTest() {
+        testCreatePage.openPage("/app/testDefinition/");
         testCreatePage.deleteTest(name);
     }
 }

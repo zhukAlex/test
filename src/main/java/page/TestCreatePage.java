@@ -3,6 +3,7 @@ package page;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
+import org.testng.Assert;
 
 import java.util.List;
 
@@ -30,9 +31,9 @@ public class TestCreatePage {
     }
 
     @Step
-    public void openPage(){
+    public void openPage(String url){
         //Open page based on relative url
-        open("/app/new-testProperties/");
+        open(url);
         //This conditions checks if test data from previous run were deleted
         //newTestCase.shouldNot(Condition.exist);
         sleep(2000);
@@ -45,8 +46,7 @@ public class TestCreatePage {
     }
 
     @Step
-    public void deleteTest(String name) {
-        open("/app/testDefinition/");
+    public SelenideElement searchElement(String name) {
         sleep(3000);
         SelenideElement td = null;
         String nameInTable = null;
@@ -55,15 +55,28 @@ public class TestCreatePage {
             td = testList.get(i).find("td");
             nameInTable = td.getText();
             if (nameInTable.equals(name)) {
-                td.click();
-                sleep(5000);
-                deleteTestButton.click();
-                sleep(3000);
-                deleteAcceptTestButton.click();
-                sleep(3000);
-                break;
+                return td;
             }
         }
+
+        return null;
+    }
+
+    @Step
+    public void deleteTest(String name) {
+        SelenideElement td = searchElement(name);
+
+        if (td != null) {
+            td.click();
+            sleep(5000);
+            deleteTestButton.click();
+            sleep(3000);
+            deleteAcceptTestButton.click();
+            sleep(3000);
+        }
+
+        Assert.assertNotEquals(null, td);
+
     }
 
     @Step
