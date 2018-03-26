@@ -37,7 +37,7 @@ public class TestDefinitionTest {
     }
 
     @Test
-    @Description("Click on \"Create test\" button")
+    @Description("Click on \"create\" test button")
     public void createTest(){
         testDefinition.createTest();
     }

@@ -2,8 +2,12 @@ package util;
 
 import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.Attachment;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.WebDriver;
+import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
+import org.testng.annotations.AfterTest;
 import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
@@ -14,8 +18,7 @@ import java.io.IOException;
 
 public class MyTestResultListener extends TestListenerAdapter {
 
-
-    @Attachment(value = "PNG Attachment}", type = "image/png")
+    @Attachment(value = "PNG Attachment {0}", type = "image/png")
     public byte[] createAttachment() {
 
         return captureScreenShot();
@@ -39,8 +42,6 @@ public class MyTestResultListener extends TestListenerAdapter {
 
         return imageInByte;
     }
-
-
 
     @Override
     public void onTestFailure(ITestResult result) {

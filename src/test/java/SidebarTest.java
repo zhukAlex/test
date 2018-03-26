@@ -19,32 +19,32 @@ public class SidebarTest extends TestDetailsPage {
 
     @Test
     @Description("Click menu item \"Home\"")
-    public void testClickHome() {
-        sidebarPage.clickMenuItemsAtHome();
+    public void testClickAtHome() {
+        sidebarPage.clickMenuItemsAtUrl("/app/main/");
     }
 
     @Test
     @Description("Click menu item \"Tests\"")
     public void testClickAtTests() {
-        sidebarPage.clickMenuItemsAtTests();
+        sidebarPage.clickMenuItemsAtUrl("/app/testDefinition/");
     }
 
     @Test
     @Description("Click menu item \"Test Run History\"")
     public void testClickAtTestRunHistory() {
-        sidebarPage.clickMenuItemsAtTestRunHistory();
+        sidebarPage.clickMenuItemsAtUrl("/app/testRun/");
     }
 
     @Test
     @Description("Click menu item \"Monitor Run History\"")
     public void testClickAtMonitorRunHistory() {
-        sidebarPage.clickMenuItemsAtMonitorRunHistory();
+        sidebarPage.clickMenuItemsAtUrl("/app/monitor-run/");
     }
 
     @Test
     @Description("Click menu item \"Analyze Web RTC Dump\"")
     public void testClickAtAnalyze() {
-        sidebarPage.clickMenuItemsAtAnalyze();
+        sidebarPage.clickMenuItemsAtUrl("/app/analyzeDump/");
     }
 
     @Test

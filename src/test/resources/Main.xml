@@ -3,7 +3,7 @@
 
     <listeners>
         <listener class-name="util.MyTestResultListener"></listener>
-        </listeners>
+    </listeners>
 
 
     <test name="WebRTC Test - Private" >

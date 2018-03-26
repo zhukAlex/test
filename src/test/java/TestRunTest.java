@@ -14,12 +14,11 @@ public class TestRunTest  {
     @Description("Open test-run page")
     public void testRun(){
         testRunPage.openPage();
-
     }
 
     @Test
     @Description("Open first finished test result and verifies if required content is present")
-    public void getTestRunInformation(){
+    public void getTestRunInformation() {
         testRunPage.openTestResults();
         testRunPage.checkOutComeRateTitle();
     }

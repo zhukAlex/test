@@ -52,9 +52,9 @@ public class LoginPage {
 
     public LoginPage(){
 
-        Configuration.headless = false;
-        Configuration.browser="firefox";
-        Configuration.baseUrl="https://app.testrtc.com";
+        Configuration.headless = true;
+        Configuration.browser = "firefox";
+        Configuration.baseUrl = "https://app.testrtc.com";
         Configuration.timeout = 3000;
     }
 

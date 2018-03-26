@@ -4,10 +4,12 @@ import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
+import org.testng.Assert;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.sleep;
+import static com.codeborne.selenide.WebDriverRunner.url;
 
 /**
  * Created by Martin Keprta on 3/4/2018.
@@ -27,85 +29,39 @@ public class SidebarPage extends Page {
     private SelenideElement inputChat = $(By.xpath(".//textarea[@rows='1']"));
     private SelenideElement buttonEmojiChat = $(By.xpath(".//div[@id='ue_messengerEmoji']"));
 
+    private String [] urls = new String[] {
+            "https://app.testrtc.com/app/main/",
+            "https://app.testrtc.com/app/testDefinition/",
+            "https://app.testrtc.com/app/testRun/",
+            "https://app.testrtc.com/app/monitor-run/",
+            "https://app.testrtc.com/app/analyzeDump/",
+            "http://testrtc.com/manual"
+    };
+
     public SidebarPage(){
-        requiredElements.add(menuItemAnalyzeWebRTCDump);
-        //  requiredElements.add(menuItemHelp);
         requiredElements.add(menuItemHome);
         requiredElements.add(menuItemTests);
-        requiredElements.add(menuItemAnalyzeWebRTCDump);
-        requiredElements.add(menuItemMonitorRunHistory);
         requiredElements.add(menuItemTestRunHistory);
+        requiredElements.add(menuItemMonitorRunHistory);
+        requiredElements.add(menuItemAnalyzeWebRTCDump);
+        //  requiredElements.add(menuItemHelp);
 
         checkElements();
     }
 
     @Step
-    public void openPage() {
+    public void openPage(String url) {
         sleep(2000);
     }
 
     @Step
-    public void clickMenuItemsAtHome() {
+    public void clickMenuItemsAtUrl(String url) {
         for (int i = 0; i < requiredElements.size(); i++) {
-            open("/app/main/");
+            open(url);
             sleep(2000);
-            try {
-                requiredElements.get(i).click();
-            } catch (ElementClickInterceptedException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    @Step
-    public void clickMenuItemsAtTests() {
-        for (int i = 0; i < requiredElements.size(); i++) {
-            open("/app/testDefinition/");
+            requiredElements.get(i).click();
             sleep(2000);
-            try {
-                requiredElements.get(i).click();
-            } catch (ElementClickInterceptedException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    @Step
-    public void clickMenuItemsAtTestRunHistory() {
-        for (int i = 0; i < requiredElements.size(); i++) {
-            open("/app/testRun/");
-            sleep(2000);
-            try {
-                requiredElements.get(i).click();
-            } catch (ElementClickInterceptedException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    @Step
-    public void clickMenuItemsAtMonitorRunHistory() {
-        for (int i = 0; i < requiredElements.size(); i++) {
-            open("/app/monitor-run/");
-            sleep(2000);
-            try {
-                requiredElements.get(i).click();
-            } catch (ElementClickInterceptedException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    @Step
-    public void clickMenuItemsAtAnalyze() {
-        for (int i = 0; i < requiredElements.size(); i++) {
-            open("/app/analyzeDump/");
-            sleep(2000);
-            try {
-                requiredElements.get(i).click();
-            } catch (ElementClickInterceptedException e) {
-                e.printStackTrace();
-            }
+            Assert.assertEquals(urls[i], url());
         }
     }
 
