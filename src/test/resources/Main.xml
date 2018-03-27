@@ -11,12 +11,6 @@
             <class name="AnalyseTest"/>
             <class name="LoginTest"/>
             <class name="DashBoardTest"/>
-            <class name="SidebarTest"/>
-            <class name="TestDefinitionTest"/>
-            <class name="TestRunTest"/>
-            <class name="WebRTCDumpTest"/>
-            <class name="TestCreatePageTest"/>
-            <class name="MonitorHistoryPageTest"/>
         </classes>
     </test>
 
